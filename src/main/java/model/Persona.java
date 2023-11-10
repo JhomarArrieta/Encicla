@@ -25,8 +25,8 @@ public class Persona {
         this.ciudad = ciudad;
     }
 
-    Persona() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Persona() {
+        
     }
 
     public String getName() {
@@ -75,5 +75,10 @@ public class Persona {
 
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" + "name=" + name + ", cedula=" + cedula + ", telefono=" + telefono + ", direccion=" + direccion + ", email=" + email + ", ciudad=" + ciudad + '}';
     }
 }

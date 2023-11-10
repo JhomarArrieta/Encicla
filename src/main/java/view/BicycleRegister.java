@@ -44,9 +44,9 @@ public class BicycleRegister extends javax.swing.JFrame {
         Register_color_txt = new javax.swing.JTextField();
         jToolBar2 = new javax.swing.JToolBar();
         save_bicycle_btn = new javax.swing.JButton();
+        mostrar_bicycle_btn = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         Register_disponible_txt = new javax.swing.JRadioButton();
         Register_ocupada_txt = new javax.swing.JRadioButton();
 
@@ -104,6 +104,15 @@ public class BicycleRegister extends javax.swing.JFrame {
         save_bicycle_btn.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar2.add(save_bicycle_btn);
 
+        mostrar_bicycle_btn.setBackground(new java.awt.Color(0, 102, 255));
+        mostrar_bicycle_btn.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        mostrar_bicycle_btn.setForeground(new java.awt.Color(255, 255, 255));
+        mostrar_bicycle_btn.setText("Mostrar");
+        mostrar_bicycle_btn.setFocusable(false);
+        mostrar_bicycle_btn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mostrar_bicycle_btn.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(mostrar_bicycle_btn);
+
         jButton2.setBackground(new java.awt.Color(0, 102, 255));
         jButton2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -121,15 +130,6 @@ public class BicycleRegister extends javax.swing.JFrame {
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar2.add(jButton3);
-
-        jButton4.setBackground(new java.awt.Color(0, 102, 255));
-        jButton4.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Cancelar");
-        jButton4.setFocusable(false);
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar2.add(jButton4);
 
         Register_disponible_txt.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         Register_disponible_txt.setText("Disponible");
@@ -213,6 +213,14 @@ public class BicycleRegister extends javax.swing.JFrame {
 
     public JTextField getRegister_Acopio_txt() {
         return Register_Acopio_txt;
+    }
+
+    public JButton getMostrar_bicycle_btn() {
+        return mostrar_bicycle_btn;
+    }
+
+    public void setMostrar_bicycle_btn(JButton mostrar_bicycle_btn) {
+        this.mostrar_bicycle_btn = mostrar_bicycle_btn;
     }
 
     public void setRegister_Acopio_txt(JTextField Register_Acopio_txt) {
@@ -311,7 +319,6 @@ public class BicycleRegister extends javax.swing.JFrame {
     private javax.swing.JTextField Register_year_txt;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -321,6 +328,7 @@ public class BicycleRegister extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JToolBar jToolBar2;
+    private javax.swing.JButton mostrar_bicycle_btn;
     private javax.swing.JButton save_bicycle_btn;
     // End of variables declaration//GEN-END:variables
 }

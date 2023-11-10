@@ -46,8 +46,9 @@ public class UserRegister extends javax.swing.JFrame {
         register_city_txt = new javax.swing.JTextField();
         jToolBar2 = new javax.swing.JToolBar();
         user_save_btn = new javax.swing.JButton();
+        user_mostrar_btn = new javax.swing.JButton();
+        user_editar_btn = new javax.swing.JButton();
         user_delete_btn = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -103,9 +104,7 @@ public class UserRegister extends javax.swing.JFrame {
         jToolBar2.setRollover(true);
         jToolBar2.setPreferredSize(new java.awt.Dimension(100, 30));
 
-        user_save_btn.setBackground(new java.awt.Color(0, 102, 255));
         user_save_btn.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        user_save_btn.setForeground(new java.awt.Color(255, 255, 255));
         user_save_btn.setText("Guardar");
         user_save_btn.setFocusable(false);
         user_save_btn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -117,23 +116,31 @@ public class UserRegister extends javax.swing.JFrame {
         });
         jToolBar2.add(user_save_btn);
 
-        user_delete_btn.setBackground(new java.awt.Color(0, 102, 255));
+        user_mostrar_btn.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        user_mostrar_btn.setText("Mostrar");
+        user_mostrar_btn.setFocusable(false);
+        user_mostrar_btn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        user_mostrar_btn.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        user_mostrar_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                user_mostrar_btnActionPerformed(evt);
+            }
+        });
+        jToolBar2.add(user_mostrar_btn);
+
+        user_editar_btn.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        user_editar_btn.setText("Editar");
+        user_editar_btn.setFocusable(false);
+        user_editar_btn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        user_editar_btn.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(user_editar_btn);
+
         user_delete_btn.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        user_delete_btn.setForeground(new java.awt.Color(255, 255, 255));
         user_delete_btn.setText("Eliminar");
         user_delete_btn.setFocusable(false);
         user_delete_btn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         user_delete_btn.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar2.add(user_delete_btn);
-
-        jButton4.setBackground(new java.awt.Color(0, 102, 255));
-        jButton4.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Cancelar");
-        jButton4.setFocusable(false);
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar2.add(jButton4);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -196,8 +203,8 @@ public class UserRegister extends javax.swing.JFrame {
                     .addComponent(register_email_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
                     .addComponent(register_city_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -222,8 +229,28 @@ public class UserRegister extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_register_cedula_txtActionPerformed
 
+    private void user_mostrar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_user_mostrar_btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_user_mostrar_btnActionPerformed
+
     public JButton getUser_delete_btn() {
         return user_delete_btn;
+    }
+
+    public JButton getUser_editar_btn() {
+        return user_editar_btn;
+    }
+
+    public void setUser_editar_btn(JButton user_editar_btn) {
+        this.user_editar_btn = user_editar_btn;
+    }
+
+    public JButton getUser_mostrar_btn() {
+        return user_mostrar_btn;
+    }
+
+    public void setUser_mostrar_btn(JButton user_mostrar_btn) {
+        this.user_mostrar_btn = user_mostrar_btn;
     }
 
     public JTextField getRegister_cedula_txt() {
@@ -370,7 +397,6 @@ public class UserRegister extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -388,6 +414,8 @@ public class UserRegister extends javax.swing.JFrame {
     private javax.swing.JTextField register_name_txt;
     private javax.swing.JTextField register_tel_txt;
     private javax.swing.JButton user_delete_btn;
+    private javax.swing.JButton user_editar_btn;
+    private javax.swing.JButton user_mostrar_btn;
     private javax.swing.JButton user_save_btn;
     // End of variables declaration//GEN-END:variables
 }

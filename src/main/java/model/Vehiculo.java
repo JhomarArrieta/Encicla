@@ -8,7 +8,7 @@ package model;
  *
  * @author Geraldine Acevedo Restrepo
  */
-public abstract class Vehiculo {
+public class Vehiculo {
     private String acopio;
     private String color;
     private int code;
@@ -22,6 +22,10 @@ public abstract class Vehiculo {
         this.year = year;
         this.estado = estado;
     }
+    public Vehiculo(){
+        
+    }
+
     
     public String getAcopio() {
         return acopio;
@@ -61,6 +65,11 @@ public abstract class Vehiculo {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehiculo{" + "acopio=" + acopio + ", color=" + color + ", code=" + code + ", year=" + year + ", estado=" + estado + '}';
     }
     
 }

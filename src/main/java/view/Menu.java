@@ -201,93 +201,20 @@ public class Menu extends javax.swing.JFrame {
 
     private void R_User_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_R_User_BtnActionPerformed
         // TODO add your handling code here:
-        //Las siguiente lineas de codigo permiten mostrar la ventana de registrar usuario al
-        //dar clic en el boton 
-        /**
-        try {
-            UserRegister openRegister = new UserRegister();
-            openRegister.setVisible(true);
-            //Las siguiente lineas de codigo permiten colocar la ventana emergente en el centro
-            int x = (escritorio.getWidth() / 2) - (openRegister.getWidth() / 2);
-            int y = (escritorio.getHeight() / 2) - (openRegister.getHeight() / 2);
-            if (openRegister.isShowing()) {
-                openRegister.setLocation(x, y);
-            } else {
-                escritorio.add(openRegister );
-                openRegister.setLocation(x, y);
-                openRegister.show();
-            }
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        * */
+
+        
     }//GEN-LAST:event_R_User_BtnActionPerformed
 
     private void R_Bycicle_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_R_Bycicle_BtnActionPerformed
         // TODO add your handling code here:
-        //Las siguiente lineas de codigo permiten mostrar la ventana de registrar bicicleta al
-        //dar clic en el boton 
-        /*
-        try {
-            BicycleRegister openBicycleRegister = new BicycleRegister();
-            openBicycleRegister.setVisible(true);
-            //Las siguiente lineas de codigo permiten colocar la ventana emergente en el centro
-            int x = (escritorio.getWidth() / 2) - (openBicycleRegister.getWidth() / 2);
-            int y = (escritorio.getHeight() / 2) - (openBicycleRegister.getHeight() / 2);
-            if (openBicycleRegister.isShowing()) {
-                openBicycleRegister.setLocation(x, y);
-            } else {
-                escritorio.add(openBicycleRegister );
-                openBicycleRegister.setLocation(x, y);
-                openBicycleRegister.show();
-            }
-        } catch (Exception e) {
-            System.out.println(e);
-        }*/
     }//GEN-LAST:event_R_Bycicle_BtnActionPerformed
 
     private void Op_Prestamo_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Op_Prestamo_BtnActionPerformed
         // TODO add your handling code here:
-        //Las siguiente lineas de codigo permiten mostrar la ventana de registrar bicicleta al
-        //dar clic en el boton 
-        try {
-            Prestamo openPrestamo = new Prestamo();
-            openPrestamo.setVisible(true);
-            //Las siguiente lineas de codigo permiten colocar la ventana emergente en el centro
-            int x = (escritorio.getWidth() / 2) - (openPrestamo.getWidth() / 2);
-            int y = (escritorio.getHeight() / 2) - (openPrestamo.getHeight() / 2);
-            if (openPrestamo.isShowing()) {
-                openPrestamo.setLocation(x, y);
-            } else {
-                escritorio.add(openPrestamo );
-                openPrestamo.setLocation(x, y);
-                openPrestamo.show();
-            }
-        } catch (Exception e) {
-            System.out.println(e);
-        }
     }//GEN-LAST:event_Op_Prestamo_BtnActionPerformed
 
     private void Op_Devolucion_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Op_Devolucion_BtnActionPerformed
         // TODO add your handling code here:
-        //Las siguiente lineas de codigo permiten mostrar la ventana de registrar bicicleta al
-        //dar clic en el boton 
-        try {
-            Devolucion openDevolucion = new Devolucion();
-            openDevolucion.setVisible(true);
-            //Las siguiente lineas de codigo permiten colocar la ventana emergente en el centro
-            int x = (escritorio.getWidth() / 2) - (openDevolucion.getWidth() / 2);
-            int y = (escritorio.getHeight() / 2) - (openDevolucion.getHeight() / 2);
-            if (openDevolucion.isShowing()) {
-                openDevolucion.setLocation(x, y);
-            } else {
-                escritorio.add(openDevolucion );
-                openDevolucion.setLocation(x, y);
-                openDevolucion.show();
-            }
-        } catch (Exception e) {
-            System.out.println(e);
-        }
     }//GEN-LAST:event_Op_Devolucion_BtnActionPerformed
 
     public JMenuItem getOp_Devolucion_Btn() {
