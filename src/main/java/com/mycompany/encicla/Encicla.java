@@ -13,7 +13,6 @@ import control.Controlador;
 public class Encicla {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
         Controlador acciones = new Controlador();
         acciones.Start();
     }

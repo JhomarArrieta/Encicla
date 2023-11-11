@@ -9,6 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.Bicycle;
 import model.Persona;
@@ -23,23 +25,48 @@ public class OperacionesVehiculos {
     private ResultSet rs = null;
     Conexion bd = new Conexion();
 
-    public void Registrar(Bicycle dato) {
+    public void RegistrarBicicletas() {
         Connection cn = bd.Conectar();
         try {
+            // Preparando el statement fuera del bucle para optimizar
             ps = cn.prepareStatement(insertar);
-            ps.setInt(1, dato.getCode());
-            ps.setString(2, dato.getAcopio());           
-            ps.setInt(3, dato.getYear());
-            ps.setString(4, dato.getColor());
-            ps.setString(5, dato.getEstado());
-            ps.executeUpdate();
-            bd.desconectar();
-            JOptionPane.showMessageDialog(null, "Registro Guardado");
+
+            String[] acopios = {"Acopio1", "Acopio2", "Acopio3", "Acopio4", "Acopio5"};
+            String[] colores = {"Rojo", "Azul", "Amarillo", "Verde", "Morado"};
+            String estado = "Disponible";
+            int year = 2023;
+
+            for (int i = 0; i < 100; i++) {
+                int codigo = i + 1;
+                String acopio = acopios[i / 20];
+                String color = colores[i / 20];
+
+                Bicycle dato = new Bicycle(codigo, acopio, year, color, estado);
+
+                ps.setInt(1, dato.getCode());
+                ps.setString(2, dato.getAcopio());
+                ps.setInt(3, dato.getYear());
+                ps.setString(4, dato.getColor());
+                ps.setString(5, dato.getEstado());
+                ps.executeUpdate();
+            }
+            JOptionPane.showMessageDialog(null, "100 Registros Guardados");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Bicicleta ya Registrada con este codigo");
-            System.out.println(ex);
+            JOptionPane.showMessageDialog(null, "Error al registrar bicicleta");
+            ex.printStackTrace();
+        } finally {
+            // Cerrar PreparedStatement y Connection aquí
+            if (ps != null) {
+                try {
+                    ps.close();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            }
+            bd.desconectar();
         }
     }
+
     public boolean Buscar(Bicycle dato){
         Connection cn = bd.Conectar();
         try {
@@ -93,7 +120,7 @@ public class OperacionesVehiculos {
             rs = ps.executeQuery();
             while (rs.next()) {
                 Bicycle bicicleta = new Bicycle();
-                bicicleta.setCode(rs.getInt("code"));
+                bicicleta.setCode(rs.getInt("codigo"));
                 bicicleta.setAcopio(rs.getString("acopio"));
                 bicicleta.setYear(rs.getInt("year"));
                 bicicleta.setColor(rs.getString("color"));

@@ -17,6 +17,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import model.Bicycle;
 import model.Persona;
+import model.ReportPDF;
 import view.BicycleRegister;
 import view.Menu;
 import view.Prestamo;
@@ -37,10 +38,13 @@ public class Controlador implements ActionListener {
     searchBicycle formBicycleView;
     Persona persona = new Persona();
     Bicycle bicicleta = new Bicycle();
+    
     OperacionesUsuarios users = new OperacionesUsuarios();
     OperacionesVehiculos vehicles = new OperacionesVehiculos();
     OperacionesPrestamo prestamo = new OperacionesPrestamo();
     DefaultTableModel model =  new DefaultTableModel();
+    
+    ReportPDF reporte = new ReportPDF();
     
     public Controlador() {
         this.users = users;
@@ -84,9 +88,21 @@ public class Controlador implements ActionListener {
         formBicycleRegister.getMostrar_bicycle_btn().addActionListener(this);
         //Es el escuchador para guardar el prestamo de la biciccleta en mariadb
         formPrestamoRegister.getGenerar_prestamo_txt().addActionListener(this);
+        
+        formMenuRegister.getbtnBicicletasPDF().addActionListener(this);
+        
+        
+        
+        
+        
+        
+        
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+        
+        
+        
         //Permite visualizar la ventana del menu de forma que quede centrado
         if(e.getSource().equals(formMenuRegister.getR_User_Btn())){
             formUserRegister.setLocationRelativeTo(null);
@@ -151,39 +167,11 @@ public class Controlador implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Hay errores, revise sus números", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
-        //Permite guardar las bicicletas en las base de datos
+        //registrar bisicletas en la base de datos
         if(e.getSource().equals(formBicycleRegister.getSave_bicycle_btn())){
-            try{
-                String acopio, color, estado;
-                int codigo, year;
-                //Aquí la idea es validar primero la información de los campos de la ventana antes de poder guardarla
-                //if (formRegister_validado()) {
-                acopio = formBicycleRegister.getRegister_Acopio_txt().getText();
-                year = Integer.parseInt(formBicycleRegister.getRegister_year_txt().getText());
-                color = formBicycleRegister.getRegister_color_txt().getText();
-                codigo = Integer.parseInt(formBicycleRegister.getRegister_cod_txt().getText());
-                if (formBicycleRegister.getRegister_disponible_txt().isSelected()){
-                    estado = "Disponible";
-                }else if (formBicycleRegister.getRegister_ocupada_txt().isSelected()){
-                    estado = "Ocupado";
-                }else{
-                    estado = "None";
-                }
-                Bicycle bicycle = new Bicycle(codigo,acopio,year,color, estado);
-                JOptionPane.showMessageDialog(null, "Entra al menos");
-                vehicles.Registrar(bicycle);
-                //La idea de esto es que funcione para limpiar los campos de la ventana
-                //Clean();
-                //} else {
-
-                //}
-            }catch (NumberFormatException x) {
-            JOptionPane.showMessageDialog(null, "Don't leave empty and unselected fields and use numbers for Force, Vision and EvilScale", "Error", JOptionPane.ERROR_MESSAGE);
-            }catch (HeadlessException m) {
-                JOptionPane.showMessageDialog(null, "Hay errores, revise sus números", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-
+            vehicles.RegistrarBicicletas();
         }
+        
         //Permite visualizar la ventana de prestamo de bicicletas
         if(e.getSource().equals(formMenuRegister.getOp_Prestamo_Btn())){
             formPrestamoRegister.setLocationRelativeTo(null);
@@ -282,6 +270,13 @@ public class Controlador implements ActionListener {
         if(e.getSource().equals(formBicycleView.getMostrar_txt())){
             //starTable2(formBicycleView.getjTable1());
         }
+        
+        if(e.getSource().equals(formMenuRegister.getbtnBicicletasPDF())){
+            ArrayList<Bicycle> listaBicicletas = vehicles.getBicicletas();
+            reporte.crearReporte("2023", listaBicicletas);
+        }
+        
+        
     }
     public void startTable2(JTable tableM){
         model = (DefaultTableModel)tableM.getModel();       

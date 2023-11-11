@@ -16,10 +16,10 @@ import javax.swing.JOptionPane;
 public class Conexion {
     public static Connection conexion = null;
     static String driver = "org.mariadb.jdbc.Driver";  
-    static String host = "localhost";
+    static String host = "127.0.0.1";
     static String bd = "bd_prueba";//nombre de la base de datos
     static String usuario = "root";
-    static String contrasenia = "1230"; 
+    static String contrasenia = "12345"; 
     static String puerto = "3308";  //si no funciona utiliza el puerto 3306  
     static String servidor = "jdbc:mariadb://" + host + ":" + puerto + "/" + bd;
     

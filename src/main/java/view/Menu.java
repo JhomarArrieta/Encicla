@@ -45,7 +45,7 @@ public class Menu extends javax.swing.JFrame {
         Op_Prestamo_Btn = new javax.swing.JMenuItem();
         Op_Devolucion_Btn = new javax.swing.JMenuItem();
         Reporte_Btn = new javax.swing.JMenu();
-        Rep_Usuarios_Btn = new javax.swing.JMenuItem();
+        btnBicicletasPDF = new javax.swing.JMenuItem();
         Rep_Bycicle_Btn = new javax.swing.JMenu();
         Rep_Byc_Prestamo_Btn = new javax.swing.JMenuItem();
         Rep_Byc_Devolucion_Btn = new javax.swing.JMenuItem();
@@ -153,15 +153,31 @@ public class Menu extends javax.swing.JFrame {
 
         Reporte_Btn.setText("Reportes");
 
-        Rep_Usuarios_Btn.setText("Usuarios");
-        Reporte_Btn.add(Rep_Usuarios_Btn);
+        btnBicicletasPDF.setText("Bicicletas");
+        btnBicicletasPDF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBicicletasPDFActionPerformed(evt);
+            }
+        });
+        Reporte_Btn.add(btnBicicletasPDF);
+        btnBicicletasPDF.getAccessibleContext().setAccessibleName("Bicicletas");
 
-        Rep_Bycicle_Btn.setText("Bicicletas");
+        Rep_Bycicle_Btn.setText("Historial");
 
         Rep_Byc_Prestamo_Btn.setText("Prestamo");
+        Rep_Byc_Prestamo_Btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Rep_Byc_Prestamo_BtnActionPerformed(evt);
+            }
+        });
         Rep_Bycicle_Btn.add(Rep_Byc_Prestamo_Btn);
 
         Rep_Byc_Devolucion_Btn.setText("Devolucion");
+        Rep_Byc_Devolucion_Btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Rep_Byc_Devolucion_BtnActionPerformed(evt);
+            }
+        });
         Rep_Bycicle_Btn.add(Rep_Byc_Devolucion_Btn);
 
         Reporte_Btn.add(Rep_Bycicle_Btn);
@@ -216,6 +232,18 @@ public class Menu extends javax.swing.JFrame {
     private void Op_Devolucion_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Op_Devolucion_BtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Op_Devolucion_BtnActionPerformed
+
+    private void btnBicicletasPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBicicletasPDFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBicicletasPDFActionPerformed
+
+    private void Rep_Byc_Prestamo_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rep_Byc_Prestamo_BtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Rep_Byc_Prestamo_BtnActionPerformed
+
+    private void Rep_Byc_Devolucion_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rep_Byc_Devolucion_BtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Rep_Byc_Devolucion_BtnActionPerformed
 
     public JMenuItem getOp_Devolucion_Btn() {
         return Op_Devolucion_Btn;
@@ -289,12 +317,12 @@ public class Menu extends javax.swing.JFrame {
         this.Rep_Bycicle_Btn = Rep_Bycicle_Btn;
     }
 
-    public JMenuItem getRep_Usuarios_Btn() {
-        return Rep_Usuarios_Btn;
+    public JMenuItem getbtnBicicletasPDF() {
+        return btnBicicletasPDF;
     }
 
-    public void setRep_Usuarios_Btn(JMenuItem Rep_Usuarios_Btn) {
-        this.Rep_Usuarios_Btn = Rep_Usuarios_Btn;
+    public void setbtnBicicletasPDF(JMenuItem Rep_Usuarios_Btn) {
+        this.btnBicicletasPDF = Rep_Usuarios_Btn;
     }
 
     public JMenu getReporte_Btn() {
@@ -320,6 +348,8 @@ public class Menu extends javax.swing.JFrame {
     public void setjPanel1(JPanel jPanel1) {
         this.escritorio = jPanel1;
     }
+    
+    
 
     /**
      * @param args the command line arguments
@@ -367,8 +397,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem Rep_Byc_Devolucion_Btn;
     private javax.swing.JMenuItem Rep_Byc_Prestamo_Btn;
     private javax.swing.JMenu Rep_Bycicle_Btn;
-    private javax.swing.JMenuItem Rep_Usuarios_Btn;
     private javax.swing.JMenu Reporte_Btn;
+    private javax.swing.JMenuItem btnBicicletasPDF;
     private javax.swing.JPanel escritorio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;

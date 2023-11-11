@@ -55,25 +55,37 @@
             <Property name="text" type="java.lang.String" value="Reportes"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="Rep_Usuarios_Btn">
+            <MenuItem class="javax.swing.JMenuItem" name="btnBicicletasPDF">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Usuarios"/>
+                <Property name="text" type="java.lang.String" value="Bicicletas"/>
               </Properties>
+              <AccessibilityProperties>
+                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Bicicletas"/>
+              </AccessibilityProperties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBicicletasPDFActionPerformed"/>
+              </Events>
             </MenuItem>
             <Menu class="javax.swing.JMenu" name="Rep_Bycicle_Btn">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Bicicletas"/>
+                <Property name="text" type="java.lang.String" value="Historial"/>
               </Properties>
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="Rep_Byc_Prestamo_Btn">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Prestamo"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Rep_Byc_Prestamo_BtnActionPerformed"/>
+                  </Events>
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="Rep_Byc_Devolucion_Btn">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Devolucion"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Rep_Byc_Devolucion_BtnActionPerformed"/>
+                  </Events>
                 </MenuItem>
               </SubComponents>
             </Menu>
