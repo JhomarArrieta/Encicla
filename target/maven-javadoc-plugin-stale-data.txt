@@ -1,0 +1,56 @@
+@options
+@packages
+-classpath
+'C:/Users/ASUS/.m2/repository/org/mariadb/jdbc/mariadb-java-client/3.2.0/mariadb-java-client-3.2.0.jar;C:/Users/ASUS/.m2/repository/com/itextpdf/itextpdf/5.5.13.3/itextpdf-5.5.13.3.jar;C:/Users/ASUS/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'19'
+-sourcepath
+'C:/Users/ASUS/Documents/Universidad/Semestre 3/Tecnicas de programacion/Laboratorios/Encicla/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2023. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/ASUS/Documents/Universidad/Semestre 3/Tecnicas de programacion/Laboratorios/Encicla/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Encicla 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'Encicla 1.0-SNAPSHOT API'
+com.mycompany.encicla
+control
+database
+model
+view
+C:\Users\ASUS\.m2\repository\org\mariadb\jdbc\mariadb-java-client\3.2.0\mariadb-java-client-3.2.0.jar = 1699058882845
+C:\Users\ASUS\.m2\repository\com\itextpdf\itextpdf\5.5.13.3\itextpdf-5.5.13.3.jar = 1698695861862
+C:\Users\ASUS\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar = 1699633598521
+C:\Users\ASUS\Documents\Universidad\Semestre 3\Tecnicas de programacion\Laboratorios\Encicla\src\main\java = 1699208252000
+C:\Users\ASUS\Documents\Universidad\Semestre 3\Tecnicas de programacion\Laboratorios\Encicla\target\site\apidocs\allclasses-index.html = 1699677861099
+C:\Users\ASUS\Documents\Universidad\Semestre 3\Tecnicas de programacion\Laboratorios\Encicla\target\site\apidocs\allpackages-index.html = 1699677861106
+C:\Users\ASUS\Documents\Universidad\Semestre 3\Tecnicas de programacion\Laboratorios\Encicla\target\site\apidocs\copy.svg = 1699677861177
+C:\Users\ASUS\Documents\Universidad\Semestre 3\Tecnicas de programacion\Laboratorios\Encicla\target\site\apidocs\element-list = 1699677860850
+C:\Users\ASUS\Documents\Universidad\Semestre 3\Tecnicas de programacion\Laboratorios\Encicla\target\site\apidocs\help-doc.html = 1699677861167
+C:\Users\ASUS\Documents\Universidad\Semestre 3\Tecnicas de programacion\Laboratorios\Encicla\target\site\apidocs\index-all.html = 1699677861154
+C:\Users\ASUS\Documents\Universidad\Semestre 3\Tecnicas de programacion\Laboratorios\Encicla\target\site\apidocs\index.html = 1699677861066
+C:\Users\ASUS\Documents\Universidad\Semestre 3\Tecnicas de programacion\Laboratorios\Encicla\target\site\apidocs\jquery-ui.overrides.css = 1699677861204
+C:\Users\ASUS\Documents\Universidad\Semestre 3\Tecnicas de programacion\Laboratorios\Encicla\target\site\apidocs\member-search-index.js = 1699677861120
+C:\Users\ASUS\Documents\Universidad\Semestre 3\Tecnicas de programacion\Laboratorios\Encicla\target\site\apidocs\module-search-index.js = 1699677861108
+C:\Users\ASUS\Documents\Universidad\Semestre 3\Tecnicas de programacion\Laboratorios\Encicla\target\site\apidocs\overview-summary.html = 1699677861161
+C:\Users\ASUS\Documents\Universidad\Semestre 3\Tecnicas de programacion\Laboratorios\Encicla\target\site\apidocs\overview-tree.html = 1699677861061
+C:\Users\ASUS\Documents\Universidad\Semestre 3\Tecnicas de programacion\Laboratorios\Encicla\target\site\apidocs\package-search-index.js = 1699677861110
+C:\Users\ASUS\Documents\Universidad\Semestre 3\Tecnicas de programacion\Laboratorios\Encicla\target\site\apidocs\script.js = 1699677861174
+C:\Users\ASUS\Documents\Universidad\Semestre 3\Tecnicas de programacion\Laboratorios\Encicla\target\site\apidocs\search-page.js = 1699677861184
+C:\Users\ASUS\Documents\Universidad\Semestre 3\Tecnicas de programacion\Laboratorios\Encicla\target\site\apidocs\search.html = 1699677861158
+C:\Users\ASUS\Documents\Universidad\Semestre 3\Tecnicas de programacion\Laboratorios\Encicla\target\site\apidocs\search.js = 1699677861182
+C:\Users\ASUS\Documents\Universidad\Semestre 3\Tecnicas de programacion\Laboratorios\Encicla\target\site\apidocs\serialized-form.html = 1699677860936
+C:\Users\ASUS\Documents\Universidad\Semestre 3\Tecnicas de programacion\Laboratorios\Encicla\target\site\apidocs\stylesheet.css = 1699677861171
+C:\Users\ASUS\Documents\Universidad\Semestre 3\Tecnicas de programacion\Laboratorios\Encicla\target\site\apidocs\tag-search-index.js = 1699677861122
+C:\Users\ASUS\Documents\Universidad\Semestre 3\Tecnicas de programacion\Laboratorios\Encicla\target\site\apidocs\type-search-index.js = 1699677861113

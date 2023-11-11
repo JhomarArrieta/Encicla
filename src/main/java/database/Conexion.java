@@ -12,6 +12,10 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author Geraldine Aecvedo Restrepo
+ * 
+ * Clase con las conexines necesarias para l abase de datos y su estructuracion
+ * 
+ * 
  */
 public class Conexion {
     public static Connection conexion = null;

@@ -32,7 +32,6 @@ view\UserRegister.class
 view\searchBicycle$2.class
 view\Menu$2.class
 view\Menu$6.class
-control\ControladorPDF.class
 database\HistorialOperaciones.class
 view\UserRegister$4.class
 view\Prestamo$1.class

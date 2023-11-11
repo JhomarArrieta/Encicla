@@ -20,7 +20,10 @@ import model.Vehiculo;
 
 /**
  *
- * @author Usuario
+ * @author Milton Cuervo
+ * 
+ * Clase que contiene los metodos para la generacion del historial con los JSON
+ * 
  */
 public class HistorialOperaciones {
 

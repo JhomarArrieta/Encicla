@@ -38,7 +38,10 @@ import view.searchUser;
 
 /**
  *
- * @author Geraldine Acevedo Restrepo
+ * @author Grupo
+ * Clase que contiene las funciones que controlan todo el programa
+ * 
+ * 
  */
 public class Controlador implements ActionListener {
     Menu formMenuRegister;

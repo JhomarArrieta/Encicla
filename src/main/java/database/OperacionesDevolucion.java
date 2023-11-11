@@ -13,6 +13,9 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author Geraldine Acevedo Restrepo
+ * 
+ * Clase con las Operaciones para devolucion de bicicletas
+ * 
  */
 public class OperacionesDevolucion {
     private final String insertar = "INSERT INTO devolucion(Nombre,Cedula,Codigo,Acopio,Estado) VALUES (?, ?, ?, ?, ?)";

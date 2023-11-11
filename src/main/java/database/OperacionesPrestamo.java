@@ -15,6 +15,9 @@ import model.Persona;
 /**
  *
  * @author Geraldine Acevedo Restrepo
+ * 
+ * Clase con las Operaciones para el prestamo de bicicletas
+ * 
  */
 public class OperacionesPrestamo {
     private final String insertar = "INSERT INTO prestamo(Nombre,Cedula,Telefono,Direccion,Email,Ciudad,Codigo,Acopio,Year,Color,Estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";

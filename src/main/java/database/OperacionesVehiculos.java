@@ -18,6 +18,9 @@ import model.Persona;
 /**
  *
  * @author Geraldine Acevedo Restrepo
+ * 
+ * clase con las funciones usadas para modificar y usar las bicicletas de la base de datos
+ * 
  */
 public class OperacionesVehiculos {
     private final String insertar = "INSERT INTO bicicletas(Codigo,Acopio,Year,Color,Estado) VALUES (?, ?, ?, ?, ?)";

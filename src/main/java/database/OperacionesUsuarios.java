@@ -16,6 +16,8 @@ import model.Persona;
 /**
  *
  * @author Geraldine Acevedo Restrepo
+ * 
+ * Clase con las operaciones que modifican los usuarion de la db
  */
 //Esta parte del codigo esta prevista a ser la que me permita registrar los usuarios del sistema de encicla
 //Se conecta con ValidacionesUsuarios, que recibe la informacion de la ventana userRegister

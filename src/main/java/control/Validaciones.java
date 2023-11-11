@@ -13,6 +13,9 @@ import javax.swing.JTextField;
 /**
  *
  * @author Geraldine Acevedo Restrepo
+ * Clase con las validaciones del proyecto
+ * 
+ * 
  */
 public class Validaciones {
     //Nos sirve para saber cuando tenemos un campo correcto porque el color de fondo y borde es normal    
