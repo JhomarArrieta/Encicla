@@ -24,10 +24,11 @@ import model.Vehiculo;
  */
 public class HistorialOperaciones {
 
-    private final String insertarPrestamo = "INSERT INTO Historial (CodigoBicicleta, Usuario, FechaPrestamo) VALUES (?, ?, NOW())";
+   private final String insertarPrestamo = "INSERT INTO Historial (CodigoBicicleta, Usuario, FechaPrestamo) VALUES (?, ?, NOW())";
     private final String insertarDevolucion = "UPDATE Historial SET FechaDevolucion = NOW() WHERE CodigoBicicleta = ? AND FechaDevolucion IS NULL";
     private PreparedStatement ps = null;
     Conexion bd = new Conexion();
+    List<Historial> historial = new ArrayList<>();
 
     public void registrarPrestamo(int codigo, String usuario) {
         Connection cn = bd.Conectar();
@@ -37,23 +38,19 @@ public class HistorialOperaciones {
             ps.setString(2, usuario);
             ps.executeUpdate();
             bd.desconectar();
-            JOptionPane.showMessageDialog(null, "Préstamo registrado");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al registrar préstamo");
             System.out.println(ex);
         }
     }
 
-    public void registrarDevolucion(int codigo) {
+    public void registrarDevolucion(String codigo) {
         Connection cn = bd.Conectar();
         try {
             ps = cn.prepareStatement(insertarDevolucion);
-            ps.setInt(1, codigo);
+            ps.setString(1, codigo);
             ps.executeUpdate();
             bd.desconectar();
-            JOptionPane.showMessageDialog(null, "Devolución registrada");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al registrar devolución");
             System.out.println(ex);
         }
     }
@@ -63,7 +60,6 @@ public class HistorialOperaciones {
         Connection cn = bd.Conectar();
         ps = cn.prepareStatement(sql);
         ResultSet rs = ps.executeQuery(); // Ejecutar la consulta y obtener el resultado...
-        List<Historial> historial = new ArrayList<>();
         while (rs.next()) {
             Historial h = new Historial();
             h.setCodigoBicicleta(rs.getInt("CodigoBicicleta"));
@@ -88,5 +84,4 @@ public class HistorialOperaciones {
             e.printStackTrace();
         }
     }
-
 }

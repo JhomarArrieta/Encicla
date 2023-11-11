@@ -5,19 +5,31 @@
 package control;
 
 import database.Conexion;
+import database.HistorialOperaciones;
+import database.OperacionesDevolucion;
 import database.OperacionesPrestamo;
 import database.OperacionesUsuarios;
 import database.OperacionesVehiculos;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import model.Bicycle;
+import model.Historial;
 import model.Persona;
+import model.ReportPDF;
 import view.BicycleRegister;
+import view.Devolucion;
 import view.Menu;
 import view.Prestamo;
 import view.UserRegister;
@@ -41,7 +53,12 @@ public class Controlador implements ActionListener {
     OperacionesVehiculos vehicles = new OperacionesVehiculos();
     OperacionesPrestamo prestamo = new OperacionesPrestamo();
     DefaultTableModel model =  new DefaultTableModel();
-    
+    ReportPDF reporte = new ReportPDF();
+    Devolucion formDevolucionRegister;
+    OperacionesDevolucion devolucion = new OperacionesDevolucion();
+    HistorialOperaciones historial = new HistorialOperaciones();
+    List<Historial> operacioneshistorial = new ArrayList<>();
+   
     public Controlador() {
         this.users = users;
         this.vehicles = vehicles;
@@ -53,6 +70,8 @@ public class Controlador implements ActionListener {
         this.formPrestamoRegister =  new Prestamo();
         this.formUserView = new searchUser();
         this.formBicycleView = new searchBicycle();
+        this.formDevolucionRegister = new Devolucion();
+        
     }
     public void Start(){
         //Conexion a la base de datos
@@ -84,9 +103,21 @@ public class Controlador implements ActionListener {
         formBicycleRegister.getMostrar_bicycle_btn().addActionListener(this);
         //Es el escuchador para guardar el prestamo de la biciccleta en mariadb
         formPrestamoRegister.getGenerar_prestamo_txt().addActionListener(this);
+        formMenuRegister.getbtnBicicletasPDF().addActionListener(this);
+        //Es el escuchador para abrir la ventana de devolucion de bicicletas
+        formMenuRegister.getOp_Devolucion_Btn().addActionListener(this);
+        //Botones de reportes en JSON
+        formMenuRegister.getRep_Byc_Prestamo_Btn().addActionListener(this);
+        formMenuRegister.getRep_Byc_Devolucion_Btn().addActionListener(this);
+        //Es el escuchador para el boton de generar la devolucion
+        formDevolucionRegister.getGenerar_dev().addActionListener(this);
+      
+        
     }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
+        
         //Permite visualizar la ventana del menu de forma que quede centrado
         if(e.getSource().equals(formMenuRegister.getR_User_Btn())){
             formUserRegister.setLocationRelativeTo(null);
@@ -101,6 +132,7 @@ public class Controlador implements ActionListener {
                 formUserRegister.show();
             }   
         }
+        
         //Permite visualizar la ventana de el registro de usuarios de forma que quede centrado
         if(e.getSource().equals(formMenuRegister.getR_Bycicle_Btn())){
             formBicycleRegister.setLocationRelativeTo(null);
@@ -115,6 +147,7 @@ public class Controlador implements ActionListener {
                 formBicycleRegister.show();
             }   
         }
+        
         //Permite visualizar la ventana de mostrar usuarios de forma que quede centrado
         if(e.getSource().equals(formUserRegister.getUser_mostrar_btn())){
             formUserView.setLocationRelativeTo(null);
@@ -129,6 +162,7 @@ public class Controlador implements ActionListener {
                 formUserView.show();
             }
         }
+        
         //Permite guardar los usuarios en la base de datos
         if(e.getSource().equals(formUserRegister.getUser_save_btn())){
             try{
@@ -151,39 +185,12 @@ public class Controlador implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Hay errores, revise sus números", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
-        //Permite guardar las bicicletas en las base de datos
+        
+        //registrar bisicletas en la base de datos
         if(e.getSource().equals(formBicycleRegister.getSave_bicycle_btn())){
-            try{
-                String acopio, color, estado;
-                int codigo, year;
-                //Aquí la idea es validar primero la información de los campos de la ventana antes de poder guardarla
-                //if (formRegister_validado()) {
-                acopio = formBicycleRegister.getRegister_Acopio_txt().getText();
-                year = Integer.parseInt(formBicycleRegister.getRegister_year_txt().getText());
-                color = formBicycleRegister.getRegister_color_txt().getText();
-                codigo = Integer.parseInt(formBicycleRegister.getRegister_cod_txt().getText());
-                if (formBicycleRegister.getRegister_disponible_txt().isSelected()){
-                    estado = "Disponible";
-                }else if (formBicycleRegister.getRegister_ocupada_txt().isSelected()){
-                    estado = "Ocupado";
-                }else{
-                    estado = "None";
-                }
-                Bicycle bicycle = new Bicycle(codigo,acopio,year,color, estado);
-                JOptionPane.showMessageDialog(null, "Entra al menos");
-                vehicles.Registrar(bicycle);
-                //La idea de esto es que funcione para limpiar los campos de la ventana
-                //Clean();
-                //} else {
-
-                //}
-            }catch (NumberFormatException x) {
-            JOptionPane.showMessageDialog(null, "Don't leave empty and unselected fields and use numbers for Force, Vision and EvilScale", "Error", JOptionPane.ERROR_MESSAGE);
-            }catch (HeadlessException m) {
-                JOptionPane.showMessageDialog(null, "Hay errores, revise sus números", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-
+            vehicles.RegistrarBicicletas();
         }
+        
         //Permite visualizar la ventana de prestamo de bicicletas
         if(e.getSource().equals(formMenuRegister.getOp_Prestamo_Btn())){
             formPrestamoRegister.setLocationRelativeTo(null);
@@ -272,8 +279,62 @@ public class Controlador implements ActionListener {
             }catch (HeadlessException m) {
                 JOptionPane.showMessageDialog(null, "Hay errores, revise sus números", "Error", JOptionPane.ERROR_MESSAGE);
             }
-
         }
+        
+        //Permite visualizar la ventana de devolucion de bicicletas
+        if(e.getSource().equals(formMenuRegister.getOp_Devolucion_Btn())){
+            formDevolucionRegister.setLocationRelativeTo(null);
+            formDevolucionRegister.setVisible(true);
+            int x = (formMenuRegister.getEscritorio().getWidth() / 2) - (formDevolucionRegister.getWidth() / 2);
+            int y = (formMenuRegister.getEscritorio().getHeight() / 2) - (formDevolucionRegister.getHeight() / 2);
+            if (formDevolucionRegister.isShowing()) {
+                formDevolucionRegister.setLocation(x, y);
+            } else {
+                formMenuRegister.getEscritorio().add(formDevolucionRegister);
+                formDevolucionRegister.setLocation(x, y);
+                formDevolucionRegister.show();
+            }   
+        }
+        
+        //Escuchador que permite registrar la devolucion de una bicicleta
+        if(e.getSource().equals(formDevolucionRegister.getGenerar_dev())){
+            try{
+                //Registro del usuario que devuelve la bicicleta
+               
+                String name = formDevolucionRegister.getNombre_dev().getText();
+                String cedula = formDevolucionRegister.getCedula_dev().getText();
+                String acopio = formDevolucionRegister.getAcopio_dev().getActionCommand();
+                String codigo = formDevolucionRegister.getCodigo_dev().getText();
+                String estado = "Disponible";
+
+                //Aqui se llama a la operacion que reaiza el debido registro en la base de datos
+                devolucion.Devolucion(name, cedula, codigo, acopio, estado);
+                historial.registrarDevolucion(codigo);
+            }catch (NumberFormatException x) {
+            JOptionPane.showMessageDialog(null, "Don't leave empty and unselected fields and use numbers for Force, Vision and EvilScale", "Error", JOptionPane.ERROR_MESSAGE);
+            }catch (HeadlessException m) {
+                JOptionPane.showMessageDialog(null, "Hay errores, revise sus números", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        
+        if(e.getSource().equals(formMenuRegister.getRep_Byc_Prestamo_Btn())){
+            try {
+                historial.obtenerHistorialJSON();
+                historial.escribirHistorialJSON();
+            } catch (SQLException | IOException ex) {
+                Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        if(e.getSource().equals(formMenuRegister.getRep_Byc_Devolucion_Btn())){
+            try {
+                historial.obtenerHistorialJSON();
+                historial.escribirHistorialJSON();
+            } catch (SQLException | IOException ex) {
+                Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
         //Permite mostrar usuarios de la base de datos
         if(e.getSource().equals(formUserView.getBuscar_txt())){
             startTable(formUserView.getTableConsult());           
@@ -282,6 +343,23 @@ public class Controlador implements ActionListener {
         if(e.getSource().equals(formBicycleView.getMostrar_txt())){
             //starTable2(formBicycleView.getjTable1());
         }
+        
+        //crear reporte pdf
+        if(e.getSource().equals(formMenuRegister.getbtnBicicletasPDF())){
+            // Obtener la fecha de hoy
+            LocalDate hoy = LocalDate.now();
+            // Formateador de fecha
+            DateTimeFormatter formateador = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            // Convertir la fecha a String
+            String fechaHoyString = hoy.format(formateador);
+
+            ArrayList<Bicycle> listaBicicletas = vehicles.getBicicletas();
+            reporte.crearReporte(fechaHoyString, listaBicicletas);
+        }
+        
+        
+        
+        
     }
     public void startTable2(JTable tableM){
         model = (DefaultTableModel)tableM.getModel();       

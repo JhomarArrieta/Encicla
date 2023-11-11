@@ -13,15 +13,20 @@ import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
+import database.OperacionesVehiculos;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
 
 /**
  *
  * @author Jhomar Arrieta
  */
 public class ReportPDF {
-    public static void crearReporte(){
+    
+    OperacionesVehiculos vehicles = new OperacionesVehiculos();
+    
+    public void crearReporte(String fecha, ArrayList<Bicycle> lista){
         
         
         try{
@@ -45,7 +50,7 @@ public class ReportPDF {
             table.addCell(cell);
             
             font = new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD, BaseColor.WHITE);
-            cell = new PdfPCell(new Phrase("14/02/2023", font));
+            cell = new PdfPCell(new Phrase(fecha, font));
             cell.setBackgroundColor(BaseColor.BLUE);
             cell.setBorderColor(BaseColor.BLUE);
             cell.setHorizontalAlignment(Element.ALIGN_CENTER);
@@ -57,6 +62,29 @@ public class ReportPDF {
             doc.add(table);
             
             //------------------------------------------------------------------
+            
+            // Crear tabla para los datos de las bicicletas
+            PdfPTable tableBicicletas = new PdfPTable(3); // 3 columnas
+            PdfPCell cell1;
+
+            // Encabezados de la tabla
+            cell1 = new PdfPCell(new Phrase("Código"));
+            tableBicicletas.addCell(cell1);
+            cell1 = new PdfPCell(new Phrase("Acopio Pertenece"));
+            tableBicicletas.addCell(cell1);
+            cell1 = new PdfPCell(new Phrase("Acopio Encuentra"));
+            tableBicicletas.addCell(cell1);
+            
+            // Obtener datos de las bicicletas
+            
+            for (Bicycle bicicleta : lista) {
+                tableBicicletas.addCell(String.valueOf(bicicleta.getCode()));
+                tableBicicletas.addCell(bicicleta.getAcopio());
+                tableBicicletas.addCell(bicicleta.getEstado());
+            }
+            
+            //Agregar la tabla al documemto
+            doc.add(tableBicicletas);
             
             
             doc.close();

@@ -5,8 +5,6 @@
 package view;
 
 import javax.swing.JButton;
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
 
 /**
  *
@@ -33,22 +31,8 @@ public class BicycleRegister extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        Register_cod_txt = new javax.swing.JTextField();
-        Register_year_txt = new javax.swing.JTextField();
-        Register_Acopio_txt = new javax.swing.JTextField();
-        Register_color_txt = new javax.swing.JTextField();
-        jToolBar2 = new javax.swing.JToolBar();
         save_bicycle_btn = new javax.swing.JButton();
         mostrar_bicycle_btn = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        Register_disponible_txt = new javax.swing.JRadioButton();
-        Register_ocupada_txt = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,7 +50,7 @@ public class BicycleRegister extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(93, 93, 93)
                 .addComponent(jLabel7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -76,125 +60,41 @@ public class BicycleRegister extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel1.setText("Código:");
-
-        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel2.setText("Año:");
-
-        jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel3.setText("Acopio:");
-
-        jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel4.setText("Estado:");
-
-        jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jLabel5.setText("Color:");
-
-        jToolBar2.setBackground(new java.awt.Color(0, 102, 255));
-        jToolBar2.setRollover(true);
-        jToolBar2.setPreferredSize(new java.awt.Dimension(100, 30));
-
         save_bicycle_btn.setBackground(new java.awt.Color(0, 102, 255));
         save_bicycle_btn.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         save_bicycle_btn.setForeground(new java.awt.Color(255, 255, 255));
         save_bicycle_btn.setText("Guardar");
-        save_bicycle_btn.setFocusable(false);
         save_bicycle_btn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         save_bicycle_btn.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar2.add(save_bicycle_btn);
 
         mostrar_bicycle_btn.setBackground(new java.awt.Color(0, 102, 255));
         mostrar_bicycle_btn.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         mostrar_bicycle_btn.setForeground(new java.awt.Color(255, 255, 255));
         mostrar_bicycle_btn.setText("Mostrar");
-        mostrar_bicycle_btn.setFocusable(false);
         mostrar_bicycle_btn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         mostrar_bicycle_btn.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar2.add(mostrar_bicycle_btn);
-
-        jButton2.setBackground(new java.awt.Color(0, 102, 255));
-        jButton2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Actualizar");
-        jButton2.setFocusable(false);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar2.add(jButton2);
-
-        jButton3.setBackground(new java.awt.Color(0, 102, 255));
-        jButton3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Eliminar");
-        jButton3.setFocusable(false);
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar2.add(jButton3);
-
-        Register_disponible_txt.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        Register_disponible_txt.setText("Disponible");
-
-        Register_ocupada_txt.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        Register_ocupada_txt.setText("Ocupada");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jToolBar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Register_Acopio_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel2))
-                            .addGap(30, 30, 30)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(Register_year_txt, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(Register_disponible_txt)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(Register_ocupada_txt))
-                                .addComponent(Register_color_txt)))
-                        .addComponent(jLabel4)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addGap(29, 29, 29)
-                            .addComponent(Register_cod_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGap(48, 48, 48)
+                .addComponent(save_bicycle_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(mostrar_bicycle_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(Register_cod_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(Register_Acopio_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(Register_color_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(Register_year_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(Register_disponible_txt)
-                    .addComponent(Register_ocupada_txt))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(save_bicycle_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                    .addComponent(mostrar_bicycle_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(52, 52, 52))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -211,9 +111,7 @@ public class BicycleRegister extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public JTextField getRegister_Acopio_txt() {
-        return Register_Acopio_txt;
-    }
+    
 
     public JButton getMostrar_bicycle_btn() {
         return mostrar_bicycle_btn;
@@ -221,50 +119,6 @@ public class BicycleRegister extends javax.swing.JFrame {
 
     public void setMostrar_bicycle_btn(JButton mostrar_bicycle_btn) {
         this.mostrar_bicycle_btn = mostrar_bicycle_btn;
-    }
-
-    public void setRegister_Acopio_txt(JTextField Register_Acopio_txt) {
-        this.Register_Acopio_txt = Register_Acopio_txt;
-    }
-
-    public JTextField getRegister_cod_txt() {
-        return Register_cod_txt;
-    }
-
-    public void setRegister_cod_txt(JTextField Register_cod_txt) {
-        this.Register_cod_txt = Register_cod_txt;
-    }
-
-    public JTextField getRegister_color_txt() {
-        return Register_color_txt;
-    }
-
-    public void setRegister_color_txt(JTextField Register_color_txt) {
-        this.Register_color_txt = Register_color_txt;
-    }
-
-    public JRadioButton getRegister_disponible_txt() {
-        return Register_disponible_txt;
-    }
-
-    public void setRegister_disponible_txt(JRadioButton Register_disponible_txt) {
-        this.Register_disponible_txt = Register_disponible_txt;
-    }
-
-    public JRadioButton getRegister_ocupada_txt() {
-        return Register_ocupada_txt;
-    }
-
-    public void setRegister_ocupada_txt(JRadioButton Register_ocupada_txt) {
-        this.Register_ocupada_txt = Register_ocupada_txt;
-    }
-
-    public JTextField getRegister_year_txt() {
-        return Register_year_txt;
-    }
-
-    public void setRegister_year_txt(JTextField Register_year_txt) {
-        this.Register_year_txt = Register_year_txt;
     }
 
     public JButton getSave_bicycle_btn() {
@@ -311,23 +165,9 @@ public class BicycleRegister extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Register_Acopio_txt;
-    private javax.swing.JTextField Register_cod_txt;
-    private javax.swing.JTextField Register_color_txt;
-    private javax.swing.JRadioButton Register_disponible_txt;
-    private javax.swing.JRadioButton Register_ocupada_txt;
-    private javax.swing.JTextField Register_year_txt;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JToolBar jToolBar2;
     private javax.swing.JButton mostrar_bicycle_btn;
     private javax.swing.JButton save_bicycle_btn;
     // End of variables declaration//GEN-END:variables
